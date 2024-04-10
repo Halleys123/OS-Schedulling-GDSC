@@ -61,5 +61,22 @@ export default [
     icon: rrIcon,
     metric: "Fairness, Overhead",
     link: "/round-robin",
+    details: {
+      fullName: "Round Robin",
+      definition: "Assigns a fixed time unit per process.",
+      description:
+        "Round Robin (RR) is a preemptive scheduling algorithm that assigns a fixed time unit per process. Each task is allocated CPU resources for a fixed time slice, known as a time quantum. Once the time quantum expires, the task is moved to the back of the ready queue, and the next task in line is selected for execution.",
+      working: [
+        "Task Arrival: New tasks arrive and are added to the ready queue.",
+        "Selection: The scheduler selects the task at the front of the queue for execution.",
+        "Execution: The selected task is allocated CPU resources for a fixed time slice.",
+        "Time Quantum: Once the time quantum expires, the task is moved to the back of the queue.",
+        "Completion: The scheduler repeats steps 2-4 until all tasks are completed.",
+      ],
+      metrics: {
+        "Average Waiting Time (AWT)": "Higher compared to SJF and RR",
+        Fairness: "All tasks are processed equally.",
+      },
+    },
   },
 ];

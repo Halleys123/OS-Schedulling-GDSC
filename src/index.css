@@ -1,0 +1,41 @@
+/* colors */
+:root {
+  --card-bg: #f0f8ff;
+  --card-bg-hover: #e0f8ff;
+  --card-bg-active: #c2f1ff;
+
+  --card-border: #b0c4de;
+  --card-border-hover: #b0c4de;
+  --card-border-active: #9bb5d8;
+
+  --text-grey: #989898;
+  --text-black: #333;
+  --text-accent: #002e5e;
+
+  --divider-grey: #dedede;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+body {
+  font-family: Raleway, sans-serif;
+  background-color: #fff;
+  color: #333;
+
+  min-height: 100vh;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: 100vh;
+}

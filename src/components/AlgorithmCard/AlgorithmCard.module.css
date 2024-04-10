@@ -1,0 +1,74 @@
+.box {
+  min-width: 25rem;
+  max-width: 26.2rem;
+  min-height: 15rem;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  background-color: var(--card-bg);
+  outline: 0.1rem solid var(--card-border);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-decoration: none;
+  flex-shrink: 0;
+
+  transition: background-color 0.3s, outline 0.3s;
+  cursor: grab;
+}
+.box:hover {
+  background-color: var(--card-bg-hover);
+  outline: 0.1rem solid var(--card-border-hover);
+}
+.heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+}
+.name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-black);
+}
+.icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.descriptionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-black);
+}
+
+.metric {
+  font-size: 1.4rem;
+  color: var(--text-black);
+}
+.active {
+  min-width: 25rem;
+  max-width: 26.2rem;
+  min-height: 15rem;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  text-decoration: none;
+
+  transition: background-color 0.3s, outline 0.3s;
+  cursor: grab;
+
+  background-color: var(--card-bg-active);
+  outline: 0.1rem solid var(--card-border-active);
+}

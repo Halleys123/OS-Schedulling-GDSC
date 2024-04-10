@@ -1,0 +1,79 @@
+.panel {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 0 2.4rem;
+}
+
+.hoverBox {
+  box-shadow: 0 0rem 0.8rem 0.1rem rgba(187, 220, 240, 0.582);
+  user-select: none;
+  transition: background-color 0.3s;
+  transition: box-shadow 0.6s;
+  cursor: pointer;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+}
+.hoverBox:hover {
+  background-color: var(--card-bg-hover);
+  box-shadow: 0 0rem 0.8rem 0.1rem rgba(0, 0, 0, 0.202);
+  transition: box-shadow 0.3s;
+}
+.titleBox {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.8rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-accent);
+}
+.description {
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: Rubik, sans-serif;
+  color: var(--text-black);
+}
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.detailText {
+  font-size: 1.4rem;
+  color: var(--text-grey);
+  margin-top: 1.2rem;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-left: 1.2rem;
+}
+.list li {
+  font-family: Rubik, sans-serif;
+  font-size: 1.4rem;
+  color: var(--text-accent);
+}
+
+@media screen and (min-width: 768px) {
+  .panel {
+    flex-basis: 40%;
+    padding: 0 1.6rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .panel {
+    flex-basis: 30%;
+    padding: 0 1.6rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .panel {
+    flex-basis: 25%;
+    padding: 0 2.4rem;
+  }
+}

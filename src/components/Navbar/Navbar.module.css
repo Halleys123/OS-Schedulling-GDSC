@@ -1,0 +1,27 @@
+.navbarMain {
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-self: stretch;
+  flex: 1;
+  padding: 0.4rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--divider-grey);
+}
+.title {
+  display: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-black);
+}
+.navbar::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,88 @@
+.main {
+  align-self: stretch;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-radius: 0.4rem;
+  padding: 1.2rem;
+  background-color: #f2f2f2;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000000;
+  flex: 1;
+  text-align: center;
+}
+.tableRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rowItem {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #000000;
+  flex: 1;
+  text-align: center;
+}
+.queue {
+  margin-top: 2.4rem;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  min-height: 12rem;
+  margin: 0 1.2rem;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1.2rem;
+}
+.details {
+  margin-left: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.time {
+  font-size: 1.4rem;
+}
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1.2rem;
+}
+.button {
+  min-width: 12rem;
+  padding: 0 1.2rem;
+  height: 4.4rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  color: white;
+  background-color: #000;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: Raleway;
+  letter-spacing: 0.5px;
+}
+.button:hover {
+  background-color: #333;
+}
+
+.button:active {
+  background-color: #666;
+}

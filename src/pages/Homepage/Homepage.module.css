@@ -1,0 +1,11 @@
+.homepage {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  width: 100vw;
+}
+.divider {
+  width: 1px;
+  align-self: stretch;
+  background-color: var(--divider-grey);
+}

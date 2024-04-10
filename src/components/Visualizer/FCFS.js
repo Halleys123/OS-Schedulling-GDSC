@@ -18,5 +18,6 @@ export default function fcfs(processes, time) {
       currentProcess.responseTime = currentProcess.waitingTime;
     }
   }
+  console.log(sortedProcesses);
   return sortedProcesses;
 }

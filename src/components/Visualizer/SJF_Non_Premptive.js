@@ -1,6 +1,7 @@
 import sortByArrivalTime from "./SortByArrivalTime";
 
 export default function sjfNonPremptive(processes, time) {
+  // ! This is wrong
   const newProcesses = [...processes];
   const sortedProcesses = sortByArrivalTime(newProcesses);
   const eligibleProcesses = sortedProcesses.filter(

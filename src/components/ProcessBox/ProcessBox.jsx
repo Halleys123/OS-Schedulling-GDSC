@@ -18,15 +18,23 @@ export default function ProcessBox({ process }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
+      style={{
+        position: "relative",
+      }}
     >
       <motion.div
-        // fill color based on completion
+        // animating width
+
         style={{
           width: `${
             ((process.burstTime - process.remainingTime) * 100) /
             process.burstTime
           }%`,
           backgroundColor: process.name === "DUMMY" ? "transparent" : "#1e90ff",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
         }}
       ></motion.div>
       <span className={styles.completionTime}>

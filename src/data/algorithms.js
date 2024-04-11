@@ -4,6 +4,7 @@ import fcfsIcon from "../assets/algo-icons/fcfs.svg";
 
 export default [
   {
+    completed: true,
     id: "first-come-first-serve",
     name: "First Come First Serve",
     description:
@@ -29,6 +30,7 @@ export default [
     },
   },
   {
+    completed: true,
     id: "shortest-job-first",
     name: "Shortest Job First",
     description:
@@ -54,6 +56,7 @@ export default [
     },
   },
   {
+    completed: false,
     id: "round-robin",
     name: "Round Robin",
     description:

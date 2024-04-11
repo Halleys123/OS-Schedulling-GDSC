@@ -27,16 +27,18 @@ export default function Navbar({ algorithms = [] } = {}) {
     >
       <span className={styles.title}>Algorithms</span>
       <div className={styles.navbar}>
-        {algorithms.map((algorithm) => (
-          <AlgorithmCard
-            key={algorithm.id}
-            name={algorithm?.name}
-            description={algorithm?.description}
-            icon={algorithm?.icon}
-            metric={algorithm?.metric}
-            link={algorithm?.link}
-          />
-        ))}
+        {algorithms
+          .filter((algo) => algo.completed)
+          .map((algorithm) => (
+            <AlgorithmCard
+              key={algorithm.id}
+              name={algorithm?.name}
+              description={algorithm?.description}
+              icon={algorithm?.icon}
+              metric={algorithm?.metric}
+              link={algorithm?.link}
+            />
+          ))}
       </div>
     </div>
   );

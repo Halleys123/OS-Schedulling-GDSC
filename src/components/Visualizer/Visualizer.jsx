@@ -1,6 +1,6 @@
 import styles from "./Visualizer.module.css";
 
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useParams } from "react-router-dom";
 
@@ -11,7 +11,35 @@ import sjfPremptive from "./SJF_Premptive";
 import sjfNonPremptive from "./SJF_Non_Premptive";
 
 import processesList from "./processes";
+import Overlay from "../Overlay/Overlay";
 // sjf non premptive
+const processDetailsBase = {
+  submittime: "",
+  waittime: "",
+  reqmemory: "",
+  nprocs: "",
+  usednprocs: "",
+  burstTimes: [],
+};
+
+function processDetailsReducer(state, action) {
+  switch (action.type) {
+    case "submittime":
+      return { ...state, submittime: action.value };
+    case "waittime":
+      return { ...state, waittime: action.value };
+    case "reqmemory":
+      return { ...state, reqmemory: action.value };
+    case "nprocs":
+      return { ...state, nprocs: action.value };
+    case "usednprocs":
+      return { ...state, usednprocs: action.value };
+    case "burstTimes":
+      return { ...state, burstTimes: action.value };
+    default:
+      return state;
+  }
+}
 
 export default function Visualizer() {
   const { algorithmId } = useParams();
@@ -19,6 +47,30 @@ export default function Visualizer() {
   const [time, setTime] = useState(0);
   const [active, setActive] = useState(1);
   const [processes, setProcesses] = useState([...processesList]);
+  const [overlay, setOverlay] = useState(false);
+  const [processDetails, handleProcessDetails] = useReducer(
+    processDetailsReducer,
+    processDetailsBase
+  );
+  useEffect(() => {
+    const burstTimes = processDetails.burstTimes;
+    const tempData = [...processesList];
+    burstTimes.forEach((burstTime, index) => {
+      tempData.push({
+        id: Math.random().toString(36),
+        name: `P${index + 1}`,
+        arrivalTime: parseInt(processDetails.submittime),
+        burstTime: burstTime,
+        remainingTime: parseInt(burstTime),
+        completionTime: 0,
+        turnaroundTime: 0,
+        waitingTime: 0,
+        responseTime: 0,
+        isActive: false,
+      });
+    });
+    setProcesses(tempData);
+  }, [processDetails]);
 
   useEffect(() => {
     let timer = null;
@@ -46,6 +98,17 @@ export default function Visualizer() {
 
   return (
     <div className={styles.main}>
+      <AnimatePresence>
+        {overlay && (
+          <Overlay
+            processDetails={processDetails}
+            handleProcessDetails={handleProcessDetails}
+            hideOverlay={() => {
+              setOverlay(false);
+            }}
+          />
+        )}
+      </AnimatePresence>
       <div className={styles.table}>
         <div className={styles.header}>
           <span className={styles.title}>Process</span>
@@ -84,7 +147,6 @@ export default function Visualizer() {
         <button
           className={styles.button}
           onClick={() => {
-            // reload window
             window.location.reload();
           }}
         >
@@ -124,6 +186,16 @@ export default function Visualizer() {
 
       <div className={styles.details}>
         <span className={styles.time}>{time} Seconds Elapsed</span>
+      </div>
+      <div className={styles.buttons}>
+        <button
+          className={styles.button}
+          onClick={() => {
+            setOverlay(true);
+          }}
+        >
+          Add Process
+        </button>
       </div>
     </div>
   );

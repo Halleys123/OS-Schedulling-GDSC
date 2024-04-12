@@ -1,0 +1,42 @@
+/* ! Do not delete the following and add themes here */
+.componentBox {
+  --background: #ffffff;
+  --border: #dedede;
+  --black: #000;
+  --wrong: #bf4040;
+  --active: #e09b04;
+  --succeses: #00c22a;
+}
+.componentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-self: stretch;
+}
+.input {
+  align-self: stretch;
+  border-radius: 0.4rem;
+  outline: 1px solid var(--border);
+  border: none;
+  padding: 1rem 1.2rem;
+  background-color: var(--background);
+  transition: outline 0.1s ease;
+  color: var(--black);
+}
+.input.selected {
+  outline: 1px solid var(--active);
+}
+.input.success {
+  outline: 1px solid var(--succeses);
+}
+.input.error {
+  outline: 1px solid var(--wrong);
+}
+.label {
+  font-size: 1.3rem;
+  font-family: Raleway;
+  font-weight: 400;
+  color: #000000;
+  align-self: flex-start;
+  user-select: none;
+}

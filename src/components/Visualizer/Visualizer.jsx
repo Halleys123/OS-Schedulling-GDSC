@@ -15,7 +15,7 @@ import Overlay from "../Overlay/Overlay";
 // sjf non premptive
 const processDetailsBase = {
   submittime: "",
-  waittime: "",
+  // waittime: "",
   reqmemory: "",
   nprocs: "",
   usednprocs: "",
@@ -26,8 +26,8 @@ function processDetailsReducer(state, action) {
   switch (action.type) {
     case "submittime":
       return { ...state, submittime: action.value };
-    case "waittime":
-      return { ...state, waittime: action.value };
+    // case "waittime":
+    //   return { ...state, waittime: action.value };
     case "reqmemory":
       return { ...state, reqmemory: action.value };
     case "nprocs":

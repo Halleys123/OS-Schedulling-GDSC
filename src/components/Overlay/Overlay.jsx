@@ -24,8 +24,9 @@ export default function Overlay({
       },
       body: JSON.stringify(processDetails),
     });
+    console.log(response);
     const data = await response.json();
-    if (!data) return console.log("No data found");
+
     hideOverlay();
     handleProcessDetails({ type: "burstTimes", value: data.prediction });
   }

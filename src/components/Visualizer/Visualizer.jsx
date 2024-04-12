@@ -153,17 +153,23 @@ export default function Visualizer() {
           Reset
         </button>
         <button
-          className={styles.button}
+          className={`${styles.button} 
+          ${processes.length === 1 || active === 1 ? styles.disabled : ""}
+          `}
           onClick={() => {
-            setActive(1);
+            processes.length !== 1;
+            active === 0 && setActive(1);
           }}
         >
           Stop Simulation
         </button>
         <button
-          className={styles.button}
+          className={`${styles.button} ${
+            processes.length === 1 || active === 0 ? styles.disabled : ""
+          }`}
           onClick={() => {
-            setActive(0);
+            processes.length !== 1;
+            active === 1 && setActive(0);
           }}
         >
           Start Simulation
@@ -195,6 +201,14 @@ export default function Visualizer() {
           }}
         >
           Add Process
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => {
+            setProcesses([processesList[0]]);
+          }}
+        >
+          Clear Processes
         </button>
       </div>
     </div>

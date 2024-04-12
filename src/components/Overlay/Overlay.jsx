@@ -34,9 +34,9 @@ export default function Overlay({
   function setSubmittime(value) {
     handleProcessDetails({ type: "submittime", value: value });
   }
-  function setWaittime(value) {
-    handleProcessDetails({ type: "waittime", value: value });
-  }
+  // function setWaittime(value) {
+  //   handleProcessDetails({ type: "waittime", value: value });
+  // }
   function setReqmemory(value) {
     handleProcessDetails({ type: "reqmemory", value: value });
   }
@@ -75,12 +75,14 @@ export default function Overlay({
             value={processDetails.submittime}
             placeholder="Enter Submit Time"
           />
-          <FilterInput
-            label="Wait Time"
-            setValue={setWaittime}
-            value={processDetails.waittime}
-            placeholder="Enter Wait Time"
-          />
+          {/* 
+            <FilterInput
+              label="Wait Time"
+              setValue={setWaittime}
+              value={processDetails.waittime}
+              placeholder="Enter Wait Time"
+            />
+          */}
           <FilterInput
             label="Memory Required"
             setValue={setReqmemory}
